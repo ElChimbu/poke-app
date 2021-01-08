@@ -18,15 +18,23 @@ function App() {
       <footer className="fixed bottom-0">
       <div className="w-full mt-6 h-1 bg-gray-400"/>
         <div className="flex mt-6 space-x-52">
-          <p className="text-lg mt-2">
+          <p className="text-lg  mb-4">
             Creado por Jeremias Gauna
           </p>
-          <a href="https://github.com" 
+          <nav>
+          <a href="https://github.com/ElChimbu/poke-app" 
              target="_blank" 
              rel="noreferrer" 
              className=" w-44 mb-6 ml-2 text-center rounded-md border-2 border-solid p-2 border-gray-900 bg-gray-400">
-            Link a mi repo
+            frontEnd
           </a>
+          <a href="https://github.com/ElChimbu/poke-api" 
+             target="_blank" 
+             rel="noreferrer" 
+             className=" w-44 mb-6 ml-2 text-center rounded-md border-2 border-solid p-2 border-gray-900 bg-gray-400">
+            backEnd
+          </a>
+          </nav>
         </div>
       </footer>
     </div>
