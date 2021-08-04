@@ -6,20 +6,19 @@ import { label } from './label';
 
 export const PokemonView = ({pokemon}) =>{
         //si el valor es true entonces devolvera el resultado de busqueda
-        if(pokemon.result === true){
+        if(pokemon.result === true && pokemon.data !== ""){
             return <div>
             <PokemonLabel name={pokemon.pokemon}/>
-            <PokemonResult name={pokemon.data.name} img={pokemon.data.sprites.front_default}/>
+            <PokemonResult name={pokemon.data.name} img={pokemon?.data?.sprites?.front_default}/>
             </div>
-        }else if(pokemon.result === false){
+            //Si el modal aun no ha sido seteado permanecera como string vacio
+        }else if(pokemon.result === ''){
+            return <PokemonModal label={label.default_case}/>
+        }else{
         //si no lo es, entonces devolvera un error
             return <div>
             <PokemonLabel name={pokemon.pokemon}/>
             <PokemonModal label={label.error_case}/>
             </div>
-        }
-        //Si el modal aun no ha sido seteado permanecera como string vacio
-        else if(pokemon.result === ''){
-            return <PokemonModal label={label.default_case}/>
         }
     }
